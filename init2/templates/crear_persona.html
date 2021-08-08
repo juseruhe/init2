@@ -1,0 +1,30 @@
+{% extends "pagina.html" %}
+{% block titulo  %} Ingresar Personas {% endblock titulo %}
+{% block pagina  %} Ingresar Personas {% endblock pagina %}
+
+
+{% block contenido %}
+
+
+
+<form action="{% url 'store' %}" method="post">
+
+    {% csrf_token %}
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre"  id="" class="input">
+    <label for="apellido">Apellido:</label>
+    <input type="text" name="apellido"  id="" class="input">
+    <label for="correo">Correo:</label>
+    <input type="email" name="correo"  id="">
+
+    <button type="submit" class="btn btn-success mt-4"><i class="fas fa-user"></i> <i class="fas fa-check"></i>  Ingresar Persona</button>
+
+   
+
+</form>
+
+<a href="{% url 'index' %}" class="btn btn-danger m-4"><i class="fas fa-arrow-circle-left"></i>    Volver</a>
+
+
+{% endblock contenido %}

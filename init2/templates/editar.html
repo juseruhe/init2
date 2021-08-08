@@ -1,0 +1,26 @@
+{% extends 'pagina.html' %}
+{% block titulo  %}Editar datos de Persona {% endblock titulo %}
+{% block pagina  %}Editar datos de Persona {% endblock pagina %}
+
+{% block contenido %}
+
+<form action="{% url 'update' persona.id %}" method="post">
+{% csrf_token %}
+
+<label for="nombre">Nombre:</label>
+<input type="text" name="nombre" value="{{persona.nombre}}" id="" class="input">
+<label for="apellido">Apellido:</label>
+<input type="text" name="apellido" value="{{persona.apellido}}" id="" class="input">
+<label for="correo">Correo:</label>
+<input type="email" name="correo" value="{{persona.correo}}" id="">
+
+
+<button type="submit" class="btn btn-warning m-4"><i class="fas fa-circle-notch"></i> Actualizar</button>
+
+<a href="{% url 'index' %}" class="btn btn-danger"><i class="fas fa-arrow-circle-left"></i> Volver</a>
+</form>
+
+
+
+
+{% endblock %}
